@@ -47,7 +47,18 @@ async def _bot(ctx):
 
 @bot.command()
 async def add(ctx, left: int, right: int):
-    """Adds two numbers together."""
     await ctx.send(left + right)
+
+@bot.command()
+async def delete(ctx, left: int, right: int):
+    await ctx.send(left - right)
+
+@bot.command()
+async def divide(ctx, left: int, right: int):
+    await ctx.send(left / right)
+
+@bot.command()
+async def multiply(ctx, left: int, right: int):
+    await ctx.send(left * right)
     
-bot.run('token is secret')
+bot.run('token')
