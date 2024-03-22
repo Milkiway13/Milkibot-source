@@ -1,10 +1,15 @@
 import discord
+import os
+import random
 from discord.ext import commands
+import requests
 
 intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix='/', intents=intents)
+
+print(os.listdir('images'))
 
 @bot.event
 async def on_ready():
@@ -60,5 +65,34 @@ async def divide(ctx, left: int, right: int):
 @bot.command()
 async def multiply(ctx, left: int, right: int):
     await ctx.send(left * right)
+    
+@bot.command(pass_context=True)
+@commands.has_permissions(change_nickname=True)
+async def hnick(ctx, member: discord.Member, nick):
+    await member.edit(nick=nick)
+
+@bot.command()
+async def mem(ctx):
+    img_name = random.choice(os.listdir('images'))
+    with open(f'images/{img_name}', 'rb') as f:
+            picture = discord.File(f)
+   # Можем передавать файл как параметр!
+    await ctx.send(file=picture)
+
+def get_duck_image_url():    
+    url = 'https://random-d.uk/api/random'
+    res = requests.get(url)
+    data = res.json()
+    return data['url']
+
+@bot.command('duck')
+async def duck(ctx):
+    '''По команде duck вызывает функцию get_duck_image_url'''
+    image_url = get_duck_image_url()
+    await ctx.send(image_url)
+
+@bot.command()
+async def yazanyata(ctx):
+    await ctx.send('отстаньте!!!')
     
 bot.run('token')
