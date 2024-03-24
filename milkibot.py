@@ -94,5 +94,35 @@ async def duck(ctx):
 @bot.command()
 async def yazanyata(ctx):
     await ctx.send('отстаньте!!!')
-    
+
+@bot.command()
+async def milkihelp(ctx):
+    await ctx.send('/hello - bot says her tag')
+    await ctx.send('/heh (count) - bot becomes crazy')
+    await ctx.send('/repeat (count) (message) - bot sends the message as many times as you wrote')
+    await ctx.send('/cool (user mention) - says is guy cool or not')
+    await ctx.send('/add (number) (number) - bot adds numbers')
+    await ctx.send('/delete (number) (number) - bot subtracts from the number, the second number')
+    await ctx.send('/multiply (number) (number) - bot multiplies numbers')
+    await ctx.send('/divide (number) (number) - bot divides numbers')
+    await ctx.send('/hnick (member mention) (nickname) - changes user nickname(needs administrator and place bots role upper then all roles)')
+    await ctx.send('/mem - sends random image from folder, named "images"')
+    await ctx.send('/duck - sends random gif/image with duck')
+    await ctx.send('/yazanyata - idk what is this')
+    await ctx.send('/radiation (language(ru/en/ge/pl/jp)) - bot says about radiation')
+
+@bot.command()
+async def radiation(ctx, lang_rad: str):
+    if lang_rad == 'ru':
+        await ctx.send('Радиация – это излучение в форме частиц или волн, которое может иметь различное происхождение: естественное (космическая радиация, радиоактивные элементы в природе) или искусственное (ядерные взрывы, ядерные реакторы, медицинские процедуры и пр.). Ионизирующая радиация способна взаимодействовать с живыми организмами, вызывая различные последствия, от лучевой болезни до мутаций ДНК. Важно соблюдать меры предосторожности и нормы безопасности при работе с радиацией.')
+    if lang_rad == 'en':
+        await ctx.send('Radiation is radiation in the form of particles or waves, which can have different origins: natural (cosmic radiation, radioactive elements in nature) or artificial (nuclear explosions, nuclear reactors, medical procedures, etc.). Ionizing radiation can interact with living organisms, causing various consequences, from radiation sickness to DNA mutations. It is important to follow precautions and safety standards when working with radiation.')
+    if lang_rad == 'pl':
+        await ctx.send('Promieniowanie to promieniowanie w postaci cząstek lub fal, które może mieć różne pochodzenie: naturalne (promieniowanie kosmiczne, pierwiastki promieniotwórcze w przyrodzie) lub sztuczne (wybuchy jądrowe, reaktory jądrowe, procedury medyczne itp.). Promieniowanie jonizujące może oddziaływać z organizmami żywymi, powodując różne konsekwencje, od choroby popromiennej po mutacje DNA. Podczas pracy z promieniowaniem ważne jest przestrzeganie środków ostrożności i norm bezpieczeństwa.')
+    if lang_rad == 'ge':
+        await ctx.send('Strahlung ist Strahlung in Form von Teilchen oder Wellen, die unterschiedlichen Ursprungs sein kann: natürlich (kosmische Strahlung, radioaktive Elemente in der Natur) oder künstlich (nukleare Explosionen, Kernreaktoren, medizinische Eingriffe usw.). Ionisierende Strahlung kann mit lebenden Organismen interagieren und verschiedene Folgen haben, von Strahlenkrankheit bis hin zu DNA-Mutationen. Bei der Arbeit mit Strahlung ist es wichtig, Vorsichtsmaßnahmen und Sicherheitsstandards zu beachten.')
+    if lang_rad == 'jp':
+        await ctx.send('放射線は粒子または波の形をした放射線であり、その起源はさまざまです。自然（宇宙​​放射線、自然界の放射性元素）または人工（核爆発、原子炉、医療処置など）です。 電離放射線は生物と相互作用し、放射線障害から DNA 突然変異まで、さまざまな影響を引き起こす可能性があります。 放射線を取り扱う場合は、予防措置と安全基準に従うことが重要です。')
+
+
 bot.run('token')
