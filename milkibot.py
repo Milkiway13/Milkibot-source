@@ -109,12 +109,13 @@ async def milkihelp(ctx):
     await ctx.send('/mem - sends random image from folder, named "images"')
     await ctx.send('/duck - sends random gif/image with duck')
     await ctx.send('/yazanyata - idk what is this')
-    await ctx.send('/radiation (language(ru/en/ge/pl/jp)) - bot says about radiation')
+    await ctx.send('/radiation (language(lu/en/ge/pl/jp)) - bot says about radiation')
+    await ctx.send('/radiation (language(lu/en/jp)) - bot says about fire')
 
 @bot.command()
 async def radiation(ctx, lang_rad: str):
-    if lang_rad == 'ru':
-        await ctx.send('Радиация – это излучение в форме частиц или волн, которое может иметь различное происхождение: естественное (космическая радиация, радиоактивные элементы в природе) или искусственное (ядерные взрывы, ядерные реакторы, медицинские процедуры и пр.). Ионизирующая радиация способна взаимодействовать с живыми организмами, вызывая различные последствия, от лучевой болезни до мутаций ДНК. Важно соблюдать меры предосторожности и нормы безопасности при работе с радиацией.')
+    if lang_rad == 'lu':
+        await ctx.send('Stralung ass Stralung a Form vu Partikelen oder Wellen, déi verschidden Originen hunn: natierlech (kosmesch Stralung, radioaktiv Elementer an der Natur) oder kënschtlech (Atomexplosiounen, Atomreaktoren, medizinesch Prozeduren, asw.). Ioniséierend Stralung kann mat liewegen Organismen interagéieren, wat verschidde Konsequenzen verursaacht, vu Stralungskrankheet bis DNA Mutatiounen. Et ass wichteg Virsiichtsmoossnamen a Sécherheetsnormen ze verfollegen wann Dir mat Stralung schafft.')
     if lang_rad == 'en':
         await ctx.send('Radiation is radiation in the form of particles or waves, which can have different origins: natural (cosmic radiation, radioactive elements in nature) or artificial (nuclear explosions, nuclear reactors, medical procedures, etc.). Ionizing radiation can interact with living organisms, causing various consequences, from radiation sickness to DNA mutations. It is important to follow precautions and safety standards when working with radiation.')
     if lang_rad == 'pl':
@@ -123,6 +124,16 @@ async def radiation(ctx, lang_rad: str):
         await ctx.send('Strahlung ist Strahlung in Form von Teilchen oder Wellen, die unterschiedlichen Ursprungs sein kann: natürlich (kosmische Strahlung, radioaktive Elemente in der Natur) oder künstlich (nukleare Explosionen, Kernreaktoren, medizinische Eingriffe usw.). Ionisierende Strahlung kann mit lebenden Organismen interagieren und verschiedene Folgen haben, von Strahlenkrankheit bis hin zu DNA-Mutationen. Bei der Arbeit mit Strahlung ist es wichtig, Vorsichtsmaßnahmen und Sicherheitsstandards zu beachten.')
     if lang_rad == 'jp':
         await ctx.send('放射線は粒子または波の形をした放射線であり、その起源はさまざまです。自然（宇宙​​放射線、自然界の放射性元素）または人工（核爆発、原子炉、医療処置など）です。 電離放射線は生物と相互作用し、放射線障害から DNA 突然変異まで、さまざまな影響を引き起こす可能性があります。 放射線を取り扱う場合は、予防措置と安全基準に従うことが重要です。')
+
+@bot.command()
+async def fire(ctx, lang_fire: str):
+    if lang_fire == 'lu':
+        await ctx.send('Bränn sinn eng sérieux Bedrohung, dofir ass et wichteg präventiv Moossnamen ze huelen fir Bränn ze verhënneren. E puer Weeër fir Feier ze vermeiden: 1. Installéiert Rauch- an Hëtztdetektoren dobannen. 2. Erhalen elektresch wiring an elektresch Apparater. 3. Loosst net ageschalt elektresch Apparater ouni Iwwerwaachung. 4. Fëmmt net op verbuedenen Plazen a geheien Zigarettestécker a spezielle Behälter. 5. Brandbar Substanzen a Materialien richteg späicheren. 6. Maacht periodesch Inspektioun a Botzen vu Kamäiner a Belëftungssystemer. No dëse Moossnamen hëlleft dWahrscheinlechkeet vun engem Feier ze reduzéieren an dSécherheet ze garantéieren.')
+    if lang_fire == 'en':
+        await ctx.send('Fires are a serious threat, so it is important to take preventive measures to prevent fires. Some ways to avoid fires: 1. Install smoke and heat detectors indoors. 2. Maintain electrical wiring and electrical appliances. 3. Do not leave switched on electrical appliances unattended. 4. Do not smoke in prohibited places and throw cigarette butts into special containers. 5. Properly store flammable substances and materials. 6. Carry out periodic inspection and cleaning of chimneys and ventilation systems. Following these measures will help reduce the likelihood of a fire and ensure safety.')
+    if lang_fire == 'jp':
+        await ctx.send('火災は深刻な脅威であるため、火災を防ぐための予防措置を講じることが重要です。 火災を避けるいくつかの方法: 1. 屋内に煙感知器と熱感知器を設置します。2. 電気配線と電気器具を保守します。3. 電気製品のスイッチを入れたまま放置しないでください。4. 禁止された場所では喫煙せず、吸い殻は専用の容器に捨ててください。5. 可燃性の物質や材料は適切に保管してください。6. 煙突と換気システムの定期的な点検と清掃を実施してください。これらの措置を講じることは、火災の可能性を減らし、安全を確保するのに役立ちます。')
+
 
 
 bot.run('token')
